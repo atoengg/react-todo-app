@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { Todos } from "./components/Todos";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -20,15 +21,15 @@ function App() {
     },
   ]);
 
-  console.log(todos)
+  console.log(todos);
 
-  return <>
-    <h1>My Todo List</h1>
+  return (
+    <>
+      <h1>My Todo List</h1>
 
-    {todos.map((item) => {
-      return <p key={item.id}>{item.title}</p>
-    })}
-  </>;
+      <Todos todos={todos} />
+    </>
+  );
 }
 
 export default App;
